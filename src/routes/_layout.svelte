@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Nav from '../components/Nav.svelte';
+  import Header from '../components/Header.svelte';
 
   export let segment: string;
 </script>
@@ -10,8 +10,8 @@
   @tailwind utilities;
 </style>
 
-<Nav {segment} />
+<Header {segment} />
 
-<main>
+<main class="container mx-auto py-10">
   <slot />
 </main>

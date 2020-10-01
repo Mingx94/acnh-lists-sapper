@@ -3,7 +3,7 @@
   import { toCamel } from 'convert-keys';
 
   export async function preload() {
-    const res = await this.fetch(`https://acnhapi.com/v1a/fish`);
+    const res = await this.fetch(`https://acnhapi.com/v1a/bugs`);
     const rawList = (await res.json()) as ApiCreature[];
 
     const list = rawList.map<Creature>(toCamel);
@@ -20,14 +20,14 @@
 
   export let list: Creature[] = [];
   const { list: filteredList, search } = getFilters(list);
-  setContext(keys.fish, { search });
+  setContext(keys.insects, { search });
 </script>
 
 <svelte:head>
-  <title>ACNH Fish List</title>
+  <title>ACNH Insects List</title>
 </svelte:head>
 
-<Filters contextKey={keys.fish} />
+<Filters contextKey={keys.insects} />
 <Sorting />
 
 <div class="grid gap-4 p-2 sm:gap-8 grid-cols-auto-120">
